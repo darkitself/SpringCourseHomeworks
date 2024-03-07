@@ -2,7 +2,6 @@ package com.course.springhomeworks.model.DTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Getter
