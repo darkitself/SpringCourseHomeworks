@@ -7,11 +7,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
-
 public class InfoDTO {
     @JsonProperty("date")
     private String date;
+
     public InfoDTO(String date){
         this.date = date;
     }

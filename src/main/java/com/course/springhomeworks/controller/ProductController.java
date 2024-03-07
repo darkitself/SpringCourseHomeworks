@@ -1,9 +1,8 @@
 package com.course.springhomeworks.controller;
-
+import com.course.springhomeworks.model.DTO.InfoDTO;
 import com.course.springhomeworks.exception.ProductNotFoundException;
 import com.course.springhomeworks.model.DTO.ProductDTO;
 import com.course.springhomeworks.model.Info;
-import com.course.springhomeworks.model.InfoDTO;
 import com.course.springhomeworks.model.Product;
 import org.springframework.web.bind.annotation.*;
 
