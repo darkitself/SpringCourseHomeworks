@@ -5,7 +5,6 @@ import com.course.springhomeworks.model.DTO.ProductDTO;
 import com.course.springhomeworks.model.Info;
 import com.course.springhomeworks.model.InfoDTO;
 import com.course.springhomeworks.model.Product;
-import lombok.Getter;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

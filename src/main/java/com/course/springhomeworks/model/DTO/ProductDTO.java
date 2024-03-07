@@ -1,6 +1,5 @@
 package com.course.springhomeworks.model.DTO;
 
-import com.course.springhomeworks.model.InfoDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;

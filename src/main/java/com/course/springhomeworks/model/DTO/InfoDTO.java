@@ -1,4 +1,4 @@
-package com.course.springhomeworks.model;
+package com.course.springhomeworks.model.DTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
