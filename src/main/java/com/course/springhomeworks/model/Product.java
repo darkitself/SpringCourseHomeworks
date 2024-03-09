@@ -9,9 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Getter
 @Setter
-public class Product  {
-    @JsonProperty("price")
-    private double price;
+public class Product extends ProductDTO {
     @JsonProperty("info")
     private ProductInfo info;
 }

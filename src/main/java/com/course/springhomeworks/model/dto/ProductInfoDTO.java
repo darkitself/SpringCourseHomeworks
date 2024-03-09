@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Component
@@ -14,5 +16,5 @@ import java.util.Date;
 @RequiredArgsConstructor
 public class ProductInfoDTO {
     @JsonProperty("date")
-    private Date date;
+    private LocalDate date;
 }
