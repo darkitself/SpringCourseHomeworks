@@ -10,7 +10,6 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Date;
 
-@Component
 @Getter
 @Setter
 @RequiredArgsConstructor

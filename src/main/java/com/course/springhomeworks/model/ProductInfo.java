@@ -1,16 +1,17 @@
 package com.course.springhomeworks.model;
 
-import com.course.springhomeworks.model.dto.ProductInfoDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import java.time.LocalDate;
 @Component
 @Getter
 @Setter
-public class ProductInfo extends ProductInfoDTO {
+public class ProductInfo{
     @JsonProperty("id")
     private int id;
+    @JsonProperty("date")
+    private LocalDate date;
 }

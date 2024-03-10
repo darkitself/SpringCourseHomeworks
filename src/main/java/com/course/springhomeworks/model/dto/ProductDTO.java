@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 @RequiredArgsConstructor
-@Component
 public class ProductDTO {
     @JsonProperty("price")
     private double price;
