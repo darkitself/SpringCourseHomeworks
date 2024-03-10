@@ -1,7 +1,7 @@
 package com.course.springhomeworks.controller;
 
 import com.course.springhomeworks.exception.ProductNotFoundException;
-import com.course.springhomeworks.model.DTO.ProductDTO;
+import com.course.springhomeworks.model.dto.ProductDTO;
 import com.course.springhomeworks.model.Info;
 import com.course.springhomeworks.model.Product;
 import com.course.springhomeworks.service.ProductService;

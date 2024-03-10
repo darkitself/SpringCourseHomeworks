@@ -1,7 +1,7 @@
 package com.course.springhomeworks.service;
 
-import com.course.springhomeworks.model.DTO.InfoDTO;
-import com.course.springhomeworks.model.DTO.ProductDTO;
+import com.course.springhomeworks.model.dto.InfoDTO;
+import com.course.springhomeworks.model.dto.ProductDTO;
 import com.course.springhomeworks.model.Info;
 import com.course.springhomeworks.model.Product;
 import org.springframework.stereotype.Service;
