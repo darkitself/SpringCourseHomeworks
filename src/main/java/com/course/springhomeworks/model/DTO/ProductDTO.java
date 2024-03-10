@@ -1,18 +1,17 @@
 package com.course.springhomeworks.model.DTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@RequiredArgsConstructor
+@NoArgsConstructor
 public class ProductDTO {
     @JsonProperty("price")
+    @NonNull
     private double price;
     @JsonProperty("info")
+    @NonNull
     private InfoDTO infoDTO;
-    public ProductDTO(double price, InfoDTO infoDTO){
-        this.price = price;
-        this.infoDTO = infoDTO;
-    }
 }

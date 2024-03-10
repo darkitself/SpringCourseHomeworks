@@ -1,26 +1,18 @@
 package com.course.springhomeworks.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-
-import java.util.List;
+import lombok.*;
 
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product {
     @JsonProperty("price")
+    @NonNull
     private double price;
     @JsonProperty("info")
+    @NonNull
     private Info info;
-    public Product(){
-
-    }
-
-    public Product(double price, Info info) {
-        this.price = price;
-        this.info = info;
-    }
 }

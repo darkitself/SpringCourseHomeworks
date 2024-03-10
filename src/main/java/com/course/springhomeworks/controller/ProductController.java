@@ -1,11 +1,13 @@
 package com.course.springhomeworks.controller;
-import com.course.springhomeworks.model.DTO.InfoDTO;
+
 import com.course.springhomeworks.exception.ProductNotFoundException;
+import com.course.springhomeworks.model.DTO.InfoDTO;
 import com.course.springhomeworks.model.DTO.ProductDTO;
 import com.course.springhomeworks.model.Info;
 import com.course.springhomeworks.model.Product;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +15,9 @@ import java.util.List;
 public class ProductController {
     private static final List<Product> database = new ArrayList<>();
     static {
-        database.add(new Product(20.0, new Info(1, "2022-01-01")));
-        database.add(new Product(12.0, new Info(2, "2022-01-02")));
-        database.add(new Product(1.0, new Info(3, "2022-01-03")));
+        database.add(new Product(20.0, new Info(1, LocalDate.parse("2022-01-01"))));
+        database.add(new Product(12.0, new Info(2,  LocalDate.parse("2022-01-02"))));
+        database.add(new Product(1.0, new Info(3,  LocalDate.parse("2022-01-03"))));
     }
 
     @PostMapping("/product")

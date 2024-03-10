@@ -1,23 +1,20 @@
 package com.course.springhomeworks.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.time.LocalDate;
 
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Info {
     @JsonProperty("id")
+    @NonNull
     private int id;
     @JsonProperty("date")
-    private String date;
-    public Info(){
-
-    }
-    public Info(int id, String date){
-        this.id = id;
-        this.date = date;
-    }
+    @NonNull
+    private LocalDate date;
 }
