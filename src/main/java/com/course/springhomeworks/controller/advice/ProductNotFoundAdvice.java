@@ -1,5 +1,6 @@
-package com.course.springhomeworks.exception;
+package com.course.springhomeworks.controller.advice;
 
+import com.course.springhomeworks.exception.ProductNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -19,5 +20,4 @@ public class ProductNotFoundAdvice {
         errorMap.put("errorMessage", productNotFoundException.getMessage());
         return errorMap;
     }
-
 }
