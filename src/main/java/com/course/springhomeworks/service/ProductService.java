@@ -6,12 +6,12 @@ import com.course.springhomeworks.model.ProductInfo;
 import com.course.springhomeworks.model.dto.ProductDTO;
 import org.springframework.stereotype.Service;
 
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 public class ProductService {
-    private static CopyOnWriteArrayList<Product> products = new CopyOnWriteArrayList<>();
-    public static Product addProduct(ProductDTO productDTO) throws InvalidRequestException {
+    private final static ConcurrentHashMap<Integer,Product> products = new ConcurrentHashMap<>();
+    public Product addProduct(ProductDTO productDTO) throws InvalidRequestException {
         try {
             ProductInfo info = new ProductInfo();
             Product product = new Product();
@@ -19,7 +19,7 @@ public class ProductService {
             info.setId(products.size());
             product.setPrice(productDTO.getPrice());
             product.setInfo(info);
-            products.add(product);
+            products.put(product.getInfo().getId(),product);
             return product;
         }catch (NullPointerException e){
             throw new InvalidRequestException();

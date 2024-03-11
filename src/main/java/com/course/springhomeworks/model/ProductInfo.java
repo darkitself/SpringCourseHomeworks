@@ -6,10 +6,10 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-@Component
+
 @Getter
 @Setter
-public class ProductInfo{
+public class ProductInfo {
     @JsonProperty("id")
     private int id;
     @JsonProperty("date")

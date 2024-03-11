@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ParseProductController {
-
+    private final ProductService productService;
+    public ParseProductController(ProductService productService) {
+        this.productService = productService;
+    }
     @PostMapping("/product")
-    public static Product parseProductDTO(@RequestBody ProductDTO productDTO) throws InvalidRequestException {
-        return ProductService.addProduct(productDTO);
+    public Product parseProductDTO(@RequestBody ProductDTO productDTO) throws InvalidRequestException {
+        return productService.addProduct(productDTO);
     }
 }

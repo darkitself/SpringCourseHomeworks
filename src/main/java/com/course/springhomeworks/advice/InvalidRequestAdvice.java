@@ -1,5 +1,6 @@
-package com.course.springhomeworks.exception;
+package com.course.springhomeworks.advice;
 
+import com.course.springhomeworks.exception.InvalidRequestException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
