@@ -1,4 +1,4 @@
-package com.course.springhomeworks.controllers;
+package com.course.springhomeworks.handlers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.client.HttpServerErrorException;
 
 @ControllerAdvice
-public class CustomExceptionHandler extends Throwable {
+public class CustomExceptionHandler {
 
     @ExceptionHandler(HttpServerErrorException.BadGateway.class)
     public ResponseEntity<String> handleBadGatewayException(HttpServerErrorException.BadGateway ex) {

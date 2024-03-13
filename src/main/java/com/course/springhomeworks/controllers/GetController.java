@@ -13,7 +13,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public class GetController {
 
     @GetMapping(value = "/headers", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<Map<String, String>> getAllHeaders(@RequestHeader Map<String, String> headers) throws CustomExceptionHandler {
+    public ResponseEntity<Map<String, String>> getAllHeaders(@RequestHeader Map<String, String> headers) {
         return ResponseEntity.ok(headers);
     }
 }
