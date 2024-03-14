@@ -1,12 +1,10 @@
-package com.course.springhomeworks.service.common;
+package com.course.springhomeworks.service.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Setter;
-import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
-@Component
 @Setter
 public class ProductInfo {
     @JsonProperty("price")

@@ -1,6 +1,7 @@
 package com.course.springhomeworks.web;
 
-import com.course.springhomeworks.service.common.ProductInfo;
+import com.course.springhomeworks.service.ShopService;
+import com.course.springhomeworks.service.model.ProductInfo;
 import com.course.springhomeworks.web.dto.ProductInfoDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,13 +22,6 @@ public class ProductController {
 
     @PostMapping("/addProduct")
     public static ProductInfo postProduct (@RequestBody ProductInfoDTO productInfoDTO) {
-        var info = new ProductInfo.Info();
-        info.setId(products.size() + 1);
-        info.setDate(productInfoDTO.info().date());
-        var productInfo = new ProductInfo();
-        productInfo.setPrice(productInfoDTO.price());
-        productInfo.setInfo(info);
-        products.put(products.size() + 1, productInfo);
-        return productInfo;
+        return ShopService.addDB(productInfoDTO);
     }
 }
