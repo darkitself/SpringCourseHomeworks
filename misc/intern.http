@@ -1,0 +1,15 @@
+###CREATE PERSON
+POST http://localhost:8080/SKBLabIntern/api/v1/addIntern
+Content-Type: application/json
+
+{
+  "firstName": "Roma",
+  "lastName": "Mesler",
+  "email": "mesleroman@@gmail.com",
+  "isJavaBackEndDev": true,
+  "skills": [
+    "Java Core",
+    "DI+IOC",
+    "validation"
+  ]
+}
