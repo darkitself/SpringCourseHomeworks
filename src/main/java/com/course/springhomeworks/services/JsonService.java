@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Service
 public class JsonService {
     private final ConcurrentHashMap<Integer, Data> dataCollections = new ConcurrentHashMap<>();
-    public void updateData(DataDTO data) {
+    public Data updateData(DataDTO data) {
         int id = dataCollections.size();
 
         Data newData = new Data();
@@ -18,10 +18,7 @@ public class JsonService {
         newData.setInfo(new Data.Info(id, data.getInfo().getDate()));
 
         dataCollections.put(id, newData);
-    }
-
-    public Data getUpdatedData() {
-        return dataCollections.get(dataCollections.size() - 1);
+        return newData;
     }
 
     public Collection<Data> getDataCollection() {

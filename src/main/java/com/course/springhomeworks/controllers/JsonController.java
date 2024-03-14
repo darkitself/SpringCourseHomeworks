@@ -1,5 +1,6 @@
 package com.course.springhomeworks.controllers;
 
+import com.course.springhomeworks.models.Data;
 import com.course.springhomeworks.models.dto.DataDTO;
 import com.course.springhomeworks.services.JsonService;
 import lombok.AllArgsConstructor;
@@ -16,8 +17,8 @@ public class JsonController {
 
     @PostMapping(produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<?> reformatJson(@RequestBody DataDTO data) {
-        service.updateData(data);
-        return ResponseEntity.ok(service.getUpdatedData());
+        Data updatedData = service.updateData(data);
+        return ResponseEntity.ok(updatedData);
     }
 
     @GetMapping(value = "/all", produces = APPLICATION_JSON_VALUE)
