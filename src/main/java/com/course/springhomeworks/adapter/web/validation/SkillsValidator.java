@@ -4,10 +4,10 @@ import com.course.springhomeworks.adapter.web.dto.PersonDTO;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-public class SkillsValidator implements ConstraintValidator<SkillsAndJavaDevConstraint, PersonDTO> {
+public class SkillsValidator implements ConstraintValidator<SkillsConstraint, PersonDTO> {
     @Override
     public boolean isValid(PersonDTO personDTO, ConstraintValidatorContext constraintValidatorContext) {
-        if (personDTO.isJavaBackEndDev() && personDTO.skills().contains("validation")) {
+        if (personDTO.skills().contains("validation")) {
             return true;
         }
         return false;

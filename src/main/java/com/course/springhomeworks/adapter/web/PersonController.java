@@ -1,7 +1,7 @@
 package com.course.springhomeworks.adapter.web;
 
 import com.course.springhomeworks.adapter.web.dto.PersonDTO;
-import com.course.springhomeworks.domain.Person;
+import com.course.springhomeworks.domain.PersonOnIntern;
 import com.course.springhomeworks.service.PersonService;
 import jakarta.validation.Valid;
 import lombok.AccessLevel;
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonController {
     PersonService personService;
     @PostMapping("/addIntern")
-    public Person addPersonToIntern(@Valid @RequestBody PersonDTO personDTO){
+    public PersonOnIntern addPersonToIntern(@Valid @RequestBody PersonDTO personDTO){
         return personService.addToIntern(personDTO);
     }
 }

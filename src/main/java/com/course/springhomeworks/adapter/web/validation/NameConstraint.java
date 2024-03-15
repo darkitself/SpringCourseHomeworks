@@ -9,10 +9,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = SkillsValidator.class)
-@Target({ElementType.PARAMETER, ElementType.TYPE})
-public @interface SkillsAndJavaDevConstraint {
-    String message() default "Вы должны указать ваши spring skills если вы java разработчик";
+@Target(ElementType.FIELD)
+@Constraint(validatedBy = NameValidator.class)
+public @interface NameConstraint {
+    String message() default "Имя/Фамилия должны быть не пустыми, не превышать 20 знаков, не должны содержать цифр";
 
     Class<?>[] groups() default {};
 
