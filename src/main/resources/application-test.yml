@@ -1,0 +1,8 @@
+skblab:
+  intern:
+    appName: Add Interns application
+    numList:
+      - 31
+      - 32
+      - 33
+    environmentVariable: ${EXAMPLE_TEST}
