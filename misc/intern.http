@@ -3,8 +3,8 @@ POST http://localhost:8080/SKBLabIntern/api/v1/addIntern
 Content-Type: application/json
 
 {
-  "firstName": "Roman",
-  "lastName": "Mesler",
+  "firstName": "",
+  "lastName": "",
   "email": "mesleroman@gmail.com",
   "isJavaBackEndDev": true,
   "skills": [
