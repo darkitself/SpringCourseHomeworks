@@ -1,6 +1,6 @@
-package com.course.springhomeworks.validators;
+package com.course.springhomeworks.validator;
 
-import com.course.springhomeworks.validators.validatorsClasses.Mod3Validator;
+import com.course.springhomeworks.validator.validatorsClasses.Mod3Validator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 import jakarta.validation.constraints.Max;

@@ -1,14 +1,12 @@
-package com.course.springhomeworks.dto;
+package com.course.springhomeworks.controller.dto;
 
-import com.course.springhomeworks.validators.Max33Min3Mod3;
-import com.course.springhomeworks.validators.PositiveAndMod2;
+import com.course.springhomeworks.validator.Max33Min3Mod3;
+import com.course.springhomeworks.validator.PositiveAndMod2;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
-public class DataDTO {
+public final class DataDTO {
     @JsonProperty("x")
     @PositiveAndMod2
     private Integer x;

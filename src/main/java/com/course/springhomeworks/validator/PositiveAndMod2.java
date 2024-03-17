@@ -1,12 +1,12 @@
-package com.course.springhomeworks.validators;
+package com.course.springhomeworks.validator;
 
-import com.course.springhomeworks.validators.validatorsClasses.SimpleValidator;
+import com.course.springhomeworks.validator.validatorsClasses.PositiveAndMod2Validator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 
 import java.lang.annotation.*;
 
-@Constraint(validatedBy = SimpleValidator.class)
+@Constraint(validatedBy = PositiveAndMod2Validator.class)
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface PositiveAndMod2 {
