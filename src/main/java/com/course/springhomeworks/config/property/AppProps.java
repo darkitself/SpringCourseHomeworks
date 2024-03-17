@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
 @Data
 @ConfigurationProperties("skblab.intern")
+@Component
 public class AppProps {
     String appName;
     List<Integer> numList;

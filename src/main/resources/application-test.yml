@@ -1,6 +1,6 @@
 skblab:
   intern:
-    appName: Add Interns application
+    appName: AddInternsApplication
     numList:
       - 31
       - 32
