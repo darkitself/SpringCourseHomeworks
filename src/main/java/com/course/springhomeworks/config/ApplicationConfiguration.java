@@ -1,6 +1,5 @@
 package com.course.springhomeworks.config;
 
-import com.course.springhomeworks.config.condition.EnvironmentCondition;
 import com.course.springhomeworks.config.property.AppProps;
 import com.course.springhomeworks.domain.DevEntity;
 import com.course.springhomeworks.domain.ProdEntity;
@@ -8,10 +7,9 @@ import com.course.springhomeworks.domain.TestEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
 @Log4j2
@@ -36,7 +34,7 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    @Conditional(EnvironmentCondition.class)
+    @ConditionalOnExpression(value = "#{ '${skblab.intern.environmentVariable}' != 'default' }")
     public ProdEntity prodBean(){
         log.info("init prodBean");
         return new ProdEntity(appProps.getEnvironmentVariable());
