@@ -1,4 +1,4 @@
-package com.course.springhomeworks.config.property;
+package com.course.springhomeworks.config;
 
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Configuration;
