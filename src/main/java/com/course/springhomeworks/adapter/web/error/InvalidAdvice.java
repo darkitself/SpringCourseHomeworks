@@ -12,6 +12,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class InvalidAdvice extends ResponseEntityExceptionHandler {
@@ -19,18 +20,9 @@ public class InvalidAdvice extends ResponseEntityExceptionHandler {
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
             MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
-        List<InvalidResponse> list = new ArrayList<>();
-        for (FieldError fieldError : ex.getBindingResult()
-                .getFieldErrors()) {
-            InvalidResponse invalidResponse = new InvalidResponse(VALIDATION_ERROR, fieldError.getField(), fieldError.getDefaultMessage());
-            list.add(invalidResponse);
-        }
-        var errors = new ArrayList<>(list);
-        List<InvalidResponse> result = new ArrayList<>();
-        for (ObjectError e : ex.getBindingResult().getGlobalErrors()) {
-            InvalidResponse invalidResponse = new InvalidResponse(VALIDATION_ERROR, e.getDefaultMessage());
-            result.add(invalidResponse);
-        }
+        var errors = ex.getBindingResult()
+                .getFieldErrors().stream().map(fieldError -> new InvalidResponse(VALIDATION_ERROR, fieldError.getField(), fieldError.getDefaultMessage())).collect(Collectors.toCollection(ArrayList::new));
+        List<InvalidResponse> result = ex.getBindingResult().getGlobalErrors().stream().map(e -> new InvalidResponse(VALIDATION_ERROR, e.getDefaultMessage())).toList();
         errors.addAll(result);
         return ResponseEntity.badRequest()
                 .body(errors);

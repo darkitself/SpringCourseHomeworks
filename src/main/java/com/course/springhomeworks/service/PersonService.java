@@ -15,7 +15,8 @@ public class PersonService {
         Long id = (long) (people.size() + 1);
         LocalDate currentDate = LocalDate.now();
         LocalDate endDate = currentDate.plusMonths(6);
-        people.put(id, PersonOnIntern.of(id, personDTO.firstName(), personDTO.lastName(), personDTO.email(),endDate));
-        return people.get(id);
+        PersonOnIntern person = PersonOnIntern.of(id, personDTO.firstName(), personDTO.lastName(), personDTO.email(),endDate);
+        people.put(id, person);
+        return person;
     }
 }
