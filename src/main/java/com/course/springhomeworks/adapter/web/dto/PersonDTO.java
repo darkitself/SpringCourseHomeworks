@@ -16,7 +16,7 @@ public record PersonDTO(
         @NameConstraint String firstName,
         @NameConstraint String lastName,
         @Email(message = "email should be valid") String email,
-        @NotNull boolean isJavaBackEndDev,
+        boolean isJavaBackEndDev,
         @NotNull List<@NotBlank String> skills
 ) {
 }

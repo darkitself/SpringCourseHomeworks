@@ -7,9 +7,6 @@ import jakarta.validation.ConstraintValidatorContext;
 public class SkillsValidator implements ConstraintValidator<SkillsConstraint, PersonDTO> {
     @Override
     public boolean isValid(PersonDTO personDTO, ConstraintValidatorContext constraintValidatorContext) {
-        if (personDTO.skills().contains("validation")) {
-            return true;
-        }
-        return false;
+        return personDTO.skills().contains("validation");
     }
 }

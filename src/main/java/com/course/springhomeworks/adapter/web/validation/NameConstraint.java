@@ -16,7 +16,7 @@ import java.lang.annotation.Target;
 @Size(max = 50, message = "Имя/Фамилия не должны превышать 50 символов")
 @Constraint(validatedBy = NameValidator.class)
 public @interface NameConstraint {
-    String message() default "Имя/Фамилия не должны превышать 20 знаков, не должны содержать цифр";
+    String message() default "Имя/Фамилия не должны превышать 50 символов, не должны содержать цифр";
 
     Class<?>[] groups() default {};
 
