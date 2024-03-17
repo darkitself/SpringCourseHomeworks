@@ -14,12 +14,14 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 @Log4j2
 @Configuration
 @RequiredArgsConstructor
 public class EmulationConfig {
     private final Property property;
+
     @ConditionalOnProperty(prefix = "spring.profiles", name = "active", havingValue = "test")
     @Bean
     public TransferService testBean() {
@@ -37,7 +39,7 @@ public class EmulationConfig {
     @Bean
     @Conditional(EnvironmentConditional.class)
     public SendingService thirdBean() {
-        log.info("crated third bean");
+        log.info("created third bean");
         return new SendingService();
     }
 }
