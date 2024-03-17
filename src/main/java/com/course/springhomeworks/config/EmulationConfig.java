@@ -1,6 +1,6 @@
 package com.course.springhomeworks.config;
 
-import com.course.springhomeworks.config.conditional.EnvironmentConditional;
+
 import com.course.springhomeworks.config.property.Property;
 import com.course.springhomeworks.service.ReceivingService;
 import com.course.springhomeworks.service.SendingService;
@@ -8,6 +8,7 @@ import com.course.springhomeworks.service.TransferService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
@@ -34,7 +35,7 @@ public class EmulationConfig {
     }
 
     @Bean
-    @Conditional(EnvironmentConditional.class)
+    @ConditionalOnExpression("#{ '${app.environmentVariable}' != 'default' }")
     public SendingService thirdBean() {
         log.info("created third bean");
         return new SendingService();
