@@ -1,0 +1,7 @@
+app:
+  values:
+    - 2
+    - 6
+    - 12
+  appName: ProdApplication
+  environmentVariable: ${EXAMPLE_TEST}

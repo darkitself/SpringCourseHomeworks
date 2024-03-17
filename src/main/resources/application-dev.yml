@@ -1,0 +1,7 @@
+app:
+  values:
+    - 1
+    - 2
+    - 4
+  appName: DevApplication
+  environmentVariable: ${EXAMPLE_TEST}
