@@ -20,7 +20,7 @@ public class ApplicationConfiguration {
     private final AppProps appProps;
 
     @Bean
-    @ConditionalOnProperty(prefix = "spring.profile", name = "active", havingValue = "test")
+    @ConditionalOnProperty(prefix = "spring.profiles", name = "active", havingValue = "test")
     public TestEntity testBean(){
         log.info("init testBean");
         return new TestEntity(appProps.getNumList());
