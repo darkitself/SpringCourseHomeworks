@@ -1,0 +1,6 @@
+app:
+  nameApp: add values
+  listApp:
+    - prod1
+    - prod2
+  EXAMPLE_TEST: active
