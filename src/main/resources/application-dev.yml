@@ -3,4 +3,4 @@ app:
   listApp:
     - dev1
     - dev2
-  EXAMPLE_TEST: default
+  environmentVariable: ${EXAMPLE_TEST}

@@ -10,5 +10,5 @@ import java.util.List;
 public class PropertyApp {
     String nameApp;
     List<String> listApp;
-    String EXAMPLE_TEST;
+    String environmentVariable;
 }

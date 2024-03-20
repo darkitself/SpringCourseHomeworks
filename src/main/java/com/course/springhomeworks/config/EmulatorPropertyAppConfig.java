@@ -25,7 +25,7 @@ public class EmulatorPropertyAppConfig {
     }
 
     @Bean
-    @ConditionalOnExpression(value = "#{ '${app.EXAMPLE_TEST}' != 'default' }")
+    @ConditionalOnExpression(value = "#{ '${app.environmentVariable}' != 'default' }")
     public ThirdValue thirdValue(){
         return new ThirdValue();
     }
