@@ -31,7 +31,7 @@ public class AppConfig {
     }
 
     @Bean(name = "BeanWithParam")
-    @ConditionalOnExpression(value = "!'${envVar}'.equals('default')")
+    @ConditionalOnExpression(value = "!'${myapp.envVar}'.equals('default')")
     public ModelWithParam withParam() {
         return new ModelWithParam(properties.getAppName(), properties.getList(), properties.getEnvVar());
     }
