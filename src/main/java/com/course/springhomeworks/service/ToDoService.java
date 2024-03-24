@@ -1,5 +1,6 @@
 package com.course.springhomeworks.service;
 
+import com.course.springhomeworks.adapter.repository.EventRepository;
 import com.course.springhomeworks.adapter.repository.ToDoRepository;
 import com.course.springhomeworks.adapter.web.dto.ToDo;
 import com.course.springhomeworks.domain.EventEntity;
@@ -12,23 +13,28 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @RequiredArgsConstructor
 public class ToDoService {
     ToDoRepository toDoRepository;
+    EventRepository eventRepository;
+
     @Transactional
     public ToDoEntity saveToDo(ToDo toDo) {
         ToDoEntity toDoEntity = new ToDoEntity();
         toDoEntity.setName(toDo.name());
-        List<EventEntity> events = new ArrayList<>();
+        List<EventEntity> eventEntities = new ArrayList<>();
         for(String event : toDo.events()) {
             EventEntity eventEntity = new EventEntity();
             eventEntity.setEventName(event);
-            events.add(eventEntity);
+            eventEntity.setToDoEntity(toDoEntity);
+            eventRepository.save(eventEntity);
+            eventEntities.add(eventEntity);
         }
-        toDoEntity.setEvents(events);
+        toDoEntity.setEvents(eventEntities);
         return toDoRepository.save(toDoEntity);
     }
 
