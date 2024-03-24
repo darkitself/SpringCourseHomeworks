@@ -31,8 +31,8 @@ public class ToDoService {
             EventEntity eventEntity = new EventEntity();
             eventEntity.setEventName(event);
             eventEntity.setToDoEntity(toDoEntity);
-            eventRepository.save(eventEntity);
             eventEntities.add(eventEntity);
+            eventRepository.save(eventEntity);
         }
         toDoEntity.setEvents(eventEntities);
         return toDoRepository.save(toDoEntity);
