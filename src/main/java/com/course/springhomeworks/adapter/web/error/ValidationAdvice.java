@@ -1,4 +1,4 @@
-package com.course.springhomeworks.web.error;
+package com.course.springhomeworks.adapter.web.error;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;

@@ -1,4 +1,4 @@
-package com.course.springhomeworks.web.validation;
+package com.course.springhomeworks.adapter.web.validation;
 
 
 import jakarta.validation.ConstraintValidator;

@@ -1,4 +1,4 @@
-package com.course.springhomeworks.web.validation;
+package com.course.springhomeworks.adapter.web.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
@@ -17,7 +17,7 @@ import java.lang.annotation.Target;
 @Size(min = 3, max = 20)
 public @interface CorrectName {
 
-    String message() default "Position to be from 3 to 20 characters";
+    String message() default "The name must be between 3 and 20 characters";
 
     Class<?>[] groups() default {};
 

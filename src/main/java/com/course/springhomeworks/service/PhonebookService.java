@@ -2,7 +2,7 @@ package com.course.springhomeworks.service;
 
 
 import com.course.springhomeworks.service.model.Person;
-import com.course.springhomeworks.web.dto.PersonDTO;
+import com.course.springhomeworks.adapter.web.dto.PersonDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;

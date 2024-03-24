@@ -1,9 +1,8 @@
-package com.course.springhomeworks.web;
+package com.course.springhomeworks.adapter.web;
 
 
+import com.course.springhomeworks.adapter.web.dto.PersonDTO;
 import com.course.springhomeworks.service.PhonebookService;
-import com.course.springhomeworks.service.model.Person;
-import com.course.springhomeworks.web.dto.PersonDTO;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
