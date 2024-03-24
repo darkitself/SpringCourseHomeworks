@@ -1,0 +1,6 @@
+app:
+  nameApp: add values
+  listApp:
+    - dev1
+    - dev2
+  environmentVariable: ${EXAMPLE_TEST}
