@@ -8,6 +8,8 @@ import jakarta.validation.Valid;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +23,9 @@ import java.util.List;
 public class ToDoController {
     ToDoService toDoService;
     @PostMapping("/create")
-    public ToDoEntity saveToDo(@RequestBody @Valid ToDo toDo){
-        return toDoService.saveToDo(toDo);
+    public ResponseEntity<ToDo> saveToDo(@RequestBody @Valid ToDo toDo){
+        toDoService.saveToDo(toDo);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/getall")
