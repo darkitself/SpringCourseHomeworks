@@ -1,14 +1,20 @@
 package com.course.springhomeworks.config.property;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.bind.ConstructorBinding;
 
 import java.util.List;
 
-@Data
 @ConfigurationProperties("app")
 public class PropertyApp {
-    String nameApp;
-    List<String> listApp;
-    String environmentVariable;
+    private final String nameApp;
+    private final List<String> listApp;
+    private final String environmentVariable;
+
+    @ConstructorBinding
+    public PropertyApp(String nameApp, List<String> listApp, String environmentVariable) {
+        this.nameApp = nameApp;
+        this.listApp = listApp;
+        this.environmentVariable = environmentVariable;
+    }
 }

@@ -3,4 +3,4 @@ app:
   listApp:
     - test1
     - test2
-  environmentVariable: ${EXAMPLE_TEST}
+  environmentVariable: ${EXAMPLE_TEST:default}
