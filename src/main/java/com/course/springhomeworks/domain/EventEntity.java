@@ -1,23 +1,23 @@
 package com.course.springhomeworks.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-import java.util.List;
-
+@Entity
+@Table(name = "event")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Getter
 @Setter
-@Entity
-@Table(name = "todo")
-public class ToDoEntity {
+public class EventEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    String name;
-    @OneToMany(mappedBy = "toDoEntity")
-    List<EventEntity> events;
+    @ManyToOne
+    @JsonIgnore
+    ToDoEntity toDoEntity;
+    String eventName;
 }
