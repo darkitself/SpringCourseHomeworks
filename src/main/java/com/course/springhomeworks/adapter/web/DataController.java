@@ -16,7 +16,6 @@ public class DataController {
     @PostMapping
     public Data createData(@Valid @RequestBody Data data) {
         //add in database
-//        Data newData = new Data();
         return data;
     }
 }
