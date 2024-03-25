@@ -19,18 +19,16 @@ public class DataService {
     public Data createData(Data data) {
         DataEntity dataEntity = dataRepository.save(new DataEntity(data.name(), data.events()));
 
-        Data newData = new Data(dataEntity.getName(), dataEntity.getEvents());
-        return newData;
+        return new Data(dataEntity.getName(), dataEntity.getEvents());
     }
 
     public List<Data> getData() {
         List<DataEntity> dataEntityList = dataRepository.findAll();
-        List<Data> dataList = dataEntityList
+        return dataEntityList
                 .stream()
                 .map((dataEntity) -> {
                     return new Data(dataEntity.getName(), dataEntity.getEvents());
                 })
                 .toList();
-        return dataList;
     }
 }

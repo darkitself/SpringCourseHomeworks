@@ -1,7 +1,6 @@
 package com.course.springhomeworks.adapter.web.controller;
 
 import com.course.springhomeworks.adapter.web.dto.Data;
-import com.course.springhomeworks.domain.DataEntity;
 import com.course.springhomeworks.service.DataService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
