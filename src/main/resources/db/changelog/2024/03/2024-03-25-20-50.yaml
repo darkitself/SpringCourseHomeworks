@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      author: SterkhovKI
+      comment: Create data table
+      id: 2024-03-25-20-50
+      changes:
+        - createSequence:
+            sequenceName: hibernate_sequence
+            incrementBy: 50
+        - createTable:
+            tableName: DATA
+            columns:
+              - column:
+                  name: ID
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: VERSION
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: NAME
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: EVENTS
+                  type: json
+                  constraints:
+                    nullable: false
