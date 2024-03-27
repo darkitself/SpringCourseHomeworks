@@ -1,6 +1,5 @@
 package com.course.springhomeworks.domain;
 
-import io.hypersistence.utils.hibernate.type.json.JsonType;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
