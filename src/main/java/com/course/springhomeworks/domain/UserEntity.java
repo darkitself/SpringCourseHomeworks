@@ -5,7 +5,6 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
-import org.hibernate.annotations.Type;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;
@@ -16,7 +15,6 @@ import java.util.List;
 public class UserEntity implements UserDetails {
     String username;
     String password;
-    @Type(JsonType.class)
     List<UserRole> authorities;
     boolean accountNonExpired;
     boolean accountNonLocked;
