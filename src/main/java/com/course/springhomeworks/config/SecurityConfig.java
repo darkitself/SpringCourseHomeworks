@@ -18,9 +18,9 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class SecurityConfig {
-    static String[] PUBLIC_URI = {"/public/api**"};
-    static String[] ADMIN_URI = {"/admin/api**"};
-    static String[] SUPPORT_URI = {"/support/api**"};
+    static String[] PUBLIC_URI = {"/public/api/**"};
+    static String[] ADMIN_URI = {"/admin/api/**"};
+    static String[] SUPPORT_URI = {"/support/api/**"};
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
